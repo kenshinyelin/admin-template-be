@@ -8,8 +8,7 @@ const createError = require('http-errors'),
   rootConfig = require('./config/rootConfig'),
   validate = require('./routes/validate'),
   indexRouter = require('./routes/index'),
-  usersRouter = require('./routes/users'),
-  acc = require('./routes/acc'),
+  usersRouter = require('./routes/users'),  
   app = express();
 mongoose.set('useCreateIndex', true)//要修复弃用警告
 //mongoose.connect(rootConfig.mongooseDbUrl,{ useNewUrlParser: true ,useUnifiedTopology:true});//链接数据库
@@ -28,10 +27,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/',index);
+app.use('/',indexRouter);
 app.use('/',validate); //验证token是否超时
-app.use('/', indexRouter);
-app.use('/acc', acc);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
