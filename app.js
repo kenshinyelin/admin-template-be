@@ -11,7 +11,7 @@ const createError = require('http-errors'),
   usersRouter = require('./routes/users'),  
   app = express();
 mongoose.set('useCreateIndex', true)//要修复弃用警告
-//mongoose.connect(rootConfig.mongooseDbUrl,{ useNewUrlParser: true ,useUnifiedTopology:true});//链接数据库
+mongoose.connect(rootConfig.mongooseDbUrl,{ useNewUrlParser: true ,useUnifiedTopology:true});//链接数据库
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
