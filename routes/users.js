@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-18 15:12:02
+ * @LastEditTime: 2020-12-26 12:01:32
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \admin-template-be\routes\users.js
+ */
 /**
  *  auth: Wayne
  *  function: 用户接口
@@ -109,6 +117,11 @@ router.get('/find',async (req,res)=>{
  * @date 2017-11-20
  * @param
  */
+/**
+ * @description: 
+ * @param {*}
+ * @return {*}
+ */
 router.post('/update',function (req,res) {
     let _id = req.body.userid,
         phone = req.body.phone,
@@ -179,10 +192,16 @@ router.post('/reset', (req, res) => {
 })
 
 
+/**
+ * @description: 
+ * @param {*}
+ * @return {*}
+ */
 router.get('/info',async (req,res)=>{
     let obj=""
     if(req.query.token==='admin')
     {
+        console.log('sss')
         obj={roles: ['admin']}
     }
     else
